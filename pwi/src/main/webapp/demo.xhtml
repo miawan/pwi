@@ -1,0 +1,43 @@
+<ui:composition template="common/templates/logintemplate.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+	<script type="text/css">
+	.centered  {
+ margin: 0px auto;
+text-align: center;
+ }
+
+
+.left {
+float: left;   
+}
+
+</script>
+	<ui:define name="content">
+		
+		
+		<h:form id="form">  
+            <h:outputText id="out" value="#{pushBean.count}"  styleClass="ui-widget display" />  
+            <br />  
+            <p:commandButton value="Click" actionListener="#{pushBean.increment}" />  
+        </h:form>  
+ 
+        <p:socket onMessage="handleMessage" channel="/counter" />  
+ 
+         <script type="text/javascript">
+                function handleMessage(data) {
+                    $('.display').html(data);
+                }          
+        </script>
+
+	</ui:define>
+</ui:composition>
+
+
+
+
+

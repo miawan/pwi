@@ -1,0 +1,98 @@
+<ui:composition template="/common/templates/template.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+	<ui:define name="content">
+			<p:messages id="messages" showDetail="true" autoUpdate="true" />		
+			<p:panel id="mainForm" header="Add New" style="width:955px">
+				<h:panelGrid columns="4">
+					<h:outputText value="Institution Name *" />
+					<h:inputText id="name"
+						value="#{institutionBean.institutionDTO.institutionname}"
+						label="Institution Name" required="true" />
+					<h:outputText value="Director *" />
+					<h:inputText id="director"
+						value="#{institutionBean.institutionDTO.director}"
+						label="Director Name" required="true" />
+					<h:outputText value="Campus *" />
+					<h:inputText id="campus"
+						value="#{institutionBean.institutionDTO.campus}" label="Campus"
+						required="true" />
+
+					<h:outputText value="City *" />
+					<h:inputText id="city"
+						value="#{institutionBean.institutionDTO.city}" label="City"
+						required="true" />
+				</h:panelGrid>
+				
+				</p:panel>
+		<h:form>
+				<p:commandButton id="submitButton" value="Add"
+					update="institutionListPanel"
+					action="#{institutionBean.saveInstitution}" />
+			
+
+			<p:panel id="institutionListPanel" header="Institutions" style="width:955px">
+			<p:commandLink value="Refresh Records" action="addInstitutions.xhtml"  />
+				<p:dataTable var="ins" value="#{institutionBean.institutions}" editable="true" paginator="true" rows="5">
+				<p:ajax event="rowEdit" update="@this" listener="#{institutionBean.rowEditListener}" />
+					<p:column headerText="Institution Name" style="width:125px">
+						<p:cellEditor>
+							<f:facet name="output">
+								<h:outputText value="#{ins.institutionname}" />
+							</f:facet>
+							<f:facet name="input">
+								<h:inputText value="#{ins.institutionname}" />
+							</f:facet>
+						</p:cellEditor>
+					</p:column>
+					<p:column headerText="Director" style="width:255px">
+						<p:cellEditor>
+							<f:facet name="output">
+								<h:outputText value="#{ins.director}" />
+							</f:facet>
+							<f:facet name="input">
+								<h:inputText value="#{ins.director}" />
+							</f:facet>
+						</p:cellEditor>
+					</p:column>
+					<p:column headerText="Campus" style="width:255px">
+						<p:cellEditor>
+							<f:facet name="output">
+								<h:outputText value="#{ins.campus}" />
+							</f:facet>
+							<f:facet name="input">
+								<h:inputText value="#{ins.campus}" />
+							</f:facet>
+						</p:cellEditor>
+					</p:column>
+					<p:column headerText="City" style="width:255px">
+						<p:cellEditor>
+							<f:facet name="output">
+								<h:outputText value="#{ins.city}" />
+							</f:facet>
+							<f:facet name="input">
+								<h:inputText value="#{ins.city}" />
+							</f:facet>
+						</p:cellEditor>
+					</p:column>
+					<p:column headerText="Options" style="width:50px">
+					<p:spacer width="10px" ></p:spacer>
+					<p:rowEditor />					
+					<p:commandLink title="#{ins.id}" action="#{institutionBean.deleteInstitution}">
+						<p:ajax update="institutionListPanel"></p:ajax>
+						<p:graphicImage value="images/DeleteRed.png"></p:graphicImage>
+						<f:param name="key" value="#{ins.id}"></f:param>
+					</p:commandLink>  
+					</p:column>	
+				</p:dataTable>
+			</p:panel>
+		</h:form>
+	</ui:define>
+</ui:composition>
+
+
+

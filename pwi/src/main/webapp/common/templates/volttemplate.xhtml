@@ -1,0 +1,358 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+	<h:head>
+		<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+		<meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
+		<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"/>
+		<meta content="yes" name="apple-mobile-web-app-capable"/>
+
+		<link type="text/css" rel="stylesheet" href="../resources/volt/primefaces.css" />
+		<script type="text/javascript" src="../resources/volt/jquery.js"></script>
+		<script type="text/javascript" src="../resources/volt/jquery-plugins.js"></script>
+		<script type="text/javascript" src="../resources/volt/primefaces.js"></script>
+		<script type="text/javascript" src="../resources/volt/fileupload.js"></script>
+		<link type="text/css" rel="stylesheet" href="../resources/volt/charts.css" />
+		<link type="text/css" rel="stylesheet" href="../resources/volt/fileupload.css" />
+		<script type="text/javascript" src="../resources/volt/charts.js"></script>
+		<link type="text/css" rel="stylesheet" href="../volt-layout/css/core-layout.css" />
+		<link type="text/css" rel="stylesheet" href="../volt-layout/css/animate.css" />
+		<link type="text/css" rel="stylesheet" href="../volt-layout/voltfonts/volt-font.css" />
+		<link type="text/css" rel="stylesheet" href="../volt-laoyot/css/font-awesome.css" />
+		<link type="text/css" rel="stylesheet" href="../volt-layout/css/volt-layout.css" />
+		
+		<script src='https://www.google.com/recaptcha/api.js'></script>
+		
+		<script type="text/javascript">if(window.PrimeFaces){}</script>
+		<title>VSL...</title>
+		<script src="../volt-layout/js/layout.js"></script>	
+
+	</h:head>
+
+
+
+
+<body class="BlueBody">
+	<h:form>
+		<div id="layout-topbar">
+			<div id="layout-topbar-indent">
+				<a id="menu-button"><i class="icon-th-menu"></i></a> 
+				<a href="dashboard.xhtml"> <img
+					src="../volt-layout/images/logo.svg" id="logo" />
+				</a>
+					<span style="margin: 1% 1% 0px 0px;" class="DispInlBlock Fright">
+						<p:splitButton value="thisButtonText" styleClass="ui-button ui-widget ui-state-default ui-corner-left ">
+							<p:menuitem value="first"/>
+						</p:splitButton>
+					</span>					 
+			</div>
+		</div>
+	</h:form>
+
+
+
+
+
+	<ul id="top-menu">
+		<li style="float: left; border: none;">
+			<a href="#"><i class="icon-vcard Opac80"></i><span><span class="Fs16">Mr. Jack BAUER, Welcome</span> <br/>
+				<span class="Opac50 Fs12">Your last login - 18.08.2015 | 3:55 PM</span></span>
+			</a>
+		</li>
+		<li>
+			<a href="#"><i class="icon-printer2 Opac80"></i>
+				<span>
+					<span class="Fs16">Orders</span> <br/>
+					<span class="Opac50 Fs12">Totally 23 Orders</span>
+				</span>
+			</a>
+		</li>
+		<li>
+			<a href="#"><i class="icon-paperclip Opac80"></i>
+				<span>
+					<span class="Fs16">Notes</span> <br/>
+					<span class="Opac50 Fs12">241 Notes</span>
+				</span>
+			</a>
+		</li>
+		<li>
+			<a href="#"><i class="icon-stopwatch Opac80"></i>
+				<span>
+					<span class="Fs16">Tasks</span> <br/>
+					<span class="Opac50 Fs12">26 Unread Tasks</span>
+				</span>
+			</a>
+		</li>
+	</ul>
+
+
+
+
+
+
+
+
+
+
+
+	<div id="layout-portlets-cover">
+		<div id="layout-portlets-cover-indent">
+			<div id="layout-portlets-table">
+
+				<div id="layout-portlets-tablerow">
+
+					<div id="layout-portlets-tablecell-left">
+						<div id="layout-menu-cover">
+							<form enctype="application/x-www-form-urlencoded" action="/volt/file.xhtml" method="post" name="menuform" id="menuform">
+								<input type="hidden" value="menuform" name="menuform"/>
+								<ul class="layout-menu" id="menuform:j_idt22">
+									<li role="menuitem" id="menuform:rm_dashboards">
+										<a class="menulink" href="#">
+											<i class="icon-leaf"> </i> 
+											<span> Dashboards</span>
+										</a>
+									<ul role="menu">
+											<li role="menuitem" id="menuform:rm_db_v1">
+												<a href="/volt/dashboard.xhtml" class="menulink">
+													<i class="icon-leaf"></i><span>Dashboard V1</span>
+												</a>
+											</li>
+											<li role="menuitem" id="menuform:rm_db_v2">
+												<a href="/volt/dashboard2.xhtml" class="menulink">
+													<i class="icon-leaf"></i><span>Dashboard V2</span>
+												</a>
+											</li>
+										</ul></li>
+									<li role="menuitem" id="menuform:rm_menupos">
+										<a class="menulink" href="#">
+											<i class="icon-select"></i> 
+											<span> Menu Position</span>
+										</a>
+									<ul role="menu">
+											<li role="menuitem" id="menuform:rm_left">
+												<a onclick="$('body').removeClass('PopupMenu');return false;" href="#" class="menulink"><i class="icon-uniE675"></i>
+													<span>Inline Menu</span>
+												</a>
+											</li>
+											<li role="menuitem" id="menuform:rm_popup">
+												<a onclick="$('body').addClass('PopupMenu');return false;" href="#" class="menulink"><i class="icon-windows"></i>
+													<span>Popup Menu</span>
+												</a>
+											</li>
+										</ul></li>
+									<li role="menuitem" id="menuform:rm_colors">
+										<a class="menulink" href="#">
+											<i class="icon-lab"></i> 
+												<span> Body Colors</span>
+										</a>
+									<ul role="menu">
+										<li role="menuitem" id="menuform:rm_bg_blue" class="active-menu-parent">
+											<a onclick="$('body').removeClass().addClass('BlueBody');return false;" href="#" class="menulink active-menu">
+												<i class="icon-syringe"></i><span>Blue</span>
+											</a>
+										</li>
+										<li role="menuitem" id="menuform:rm_bg_leaden">
+											<a onclick="$('body').removeClass().addClass('LeadenBody');return false;" href="#" class="menulink"><i class="icon-syringe"></i><span>Leaden</span>
+											</a>
+										</li>
+										<li role="menuitem" id="menuform:rm_bg_red">
+											<a onclick="$('body').removeClass().addClass('RedBody');return false;" href="#" class="menulink"><i class="icon-syringe"></i><span>Red</span>
+											</a>
+										</li>
+										<li role="menuitem" id="menuform:rm_bg_green">
+											<a onclick="$('body').removeClass().addClass('GreenBody');return false;" href="#" class="menulink"><i class="icon-syringe"></i><span>Green</span>
+											</a>
+										</li>
+										<li role="menuitem" id="menuform:rm_bg_cf">
+											<a onclick="$('body').removeClass().addClass('CornFlowerBody');return false;" href="#" class="menulink"><i class="icon-syringe"></i><span>CornFlower</span>
+											</a>
+										</li>
+										<li role="menuitem" id="menuform:rm_bg_gray">
+											<a onclick="$('body').removeClass().addClass('DarkGrayBody');return false;" href="#" class="menulink"><i class="icon-syringe"></i><span>Gray</span>
+											</a>
+										</li>
+									</ul></li>
+									<li role="menuitem" id="menuform:rm_theme" class="">
+										<a class="menulink" href="#"><i class="icon-meter"></i> 
+											<span> Volt Theme</span>
+										</a>
+										<ul role="menu" class="">
+												<li role="menuitem" id="menuform:rm_sample">
+													<a href="/volt/sample.xhtml" class="menulink">
+														<i class="fa fa-columns"></i>
+															<span>Sample Page</span>
+													</a>
+												</li>
+												<li role="menuitem" id="menuform:rm_forms">
+													<a href="/volt/forms.xhtml" class="menulink">
+														<i class="icon-document-text"></i>
+															<span>Form Elements</span>
+													</a>
+												</li>
+												<li role="menuitem" id="menuform:rm_data">
+													<a href="/volt/data.xhtml" class="menulink">
+														<i class="icon-cube"></i>
+															<span>Data Components</span>
+													</a>
+												</li>
+												<li role="menuitem" id="menuform:rm_datatable">
+													<a href="/volt/datatable.xhtml" class="menulink">
+														<i class="icon-news"></i>
+															<span>DataTable</span>
+													</a>
+												</li>
+												<li role="menuitem" id="menuform:rm_panels">
+													<a href="/volt/panel.xhtml" class="menulink">
+														<i class="icon-window"></i>
+															<span>Panels</span>
+													</a>
+												</li>
+												<li role="menuitem" id="menuform:rm_overlays">
+													<a href="/volt/overlay.xhtml" class="menulink">
+														<i class="icon-windows"></i>
+															<span>Overlays</span>
+													</a>
+												</li>
+												<li role="menuitem" id="menuform:rm_menus">
+													<a href="/volt/menu.xhtml" class="menulink">
+														<i class="icon-uniE675"></i>
+															<span>Menus</span>
+													</a>
+												</li>
+												<li role="menuitem" id="menuform:rm_messages">
+													<a href="/volt/messages.xhtml" class="menulink">
+														<i class="icon-messages"></i>
+															<span>Messages</span>
+													</a>
+												</li>
+												<li role="menuitem" id="menuform:rm_fileupload"
+													class="active-menu-parent"><a href="/volt/file.xhtml"
+													class="menulink active-menu"><i class="icon-upload"></i><span>FileUpload</span></a></li>
+												<li role="menuitem" id="menuform:rm_misc">
+													<a href="/volt/misc.xhtml" class="menulink">
+														<i class="icon-pill"></i>
+															<span>Misc</span>
+													</a>
+												</li>
+											</ul>
+										</li>
+								<li role="menuitem" id="menuform:rm_default">
+										<a class="menulink" href="#">
+											<i class="icon-list"></i> 
+												<span>Default Pages</span>
+										</a>
+									<ul role="menu">
+										<li role="menuitem" id="menuform:rm_empty">
+											<a href="/volt/empty-page.xhtml" class="menulink">
+												<i class="icon-code-outline"></i>
+												<span>Empty Page</span>
+											</a>
+										</li>
+										<li role="menuitem" id="menuform:rm_login">
+											<a href="/volt/login.xhtml" class="menulink">
+												<i class="icon-key-outline"></i>
+												<span>Login Page</span>
+											</a>
+										</li>
+										<li role="menuitem" id="menuform:rm_error">
+											<a href="/volt/error.xhtml" class="menulink">
+												<i class="icon-radar-outline"></i>
+												<span>Error Page</span>
+											</a>
+										</li>
+										<li role="menuitem" id="menuform:rm_404">
+											<a href="/volt/404.xhtml" class="menulink">
+												<i class="icon-search"></i>
+												<span>404 Page</span>
+											</a>
+										</li>
+										<li role="menuitem" id="menuform:rm_access">
+											<a href="/volt/access-denied.xhtml" class="menulink">
+												<i class="icon-eye-outline"></i>
+												<span>Access Denied Page</span>
+											</a>
+										</li>
+									</ul>
+								</li>
+									<li role="menuitem" id="menuform:rm_hierarchy"><a
+										class="menulink" href="#"><i class="icon-flow-switch"></i>
+											<span> Menu Hierarchy</span></a>
+									<ul role="menu">
+											<li role="menuitem" id="menuform:rm_sm1"><a
+												class="menulink" href="#"><i class="icon-folder2"></i> <span>
+														Submenu 1</span></a>
+											<ul role="menu">
+													<li role="menuitem" id="menuform:rm_sm11"><a
+														class="menulink" href="#"><i class="icon-folder2"></i>
+															<span> Submenu 1.1</span></a>
+													<ul role="menu">
+															<li role="menuitem" id="menuform:rm_sm111"><a
+																class="menulink" href="#"><i class="icon-folder2"></i>
+																	<span> Submenu 1.1.1</span></a>
+															<ul role="menu">
+																	<li role="menuitem" id="menuform:rm_lnk1111"><a
+																		href="#" class="menulink"><i
+																			class="icon-link-outline"></i><span>Link 1</span></a></li>
+																	<li role="menuitem" id="menuform:rm_lnk1112"><a
+																		href="#" class="menulink"><i
+																			class="icon-link-outline"></i><span>Link 2</span></a></li>
+																	<li role="menuitem" id="menuform:rm_lnk1113"><a
+																		href="#" class="menulink"><i
+																			class="icon-link-outline"></i><span>Link 3</span></a></li>
+																</ul></li>
+														</ul></li>
+												</ul></li>
+											<li role="menuitem" id="menuform:rm_sm2"><a
+												class="menulink" href="#"><i class="icon-folder2"></i> <span>
+														Submenu 2</span></a>
+											<ul role="menu">
+													<li role="menuitem" id="menuform:rm_22"><a
+														class="menulink" href="#"><i class="icon-folder2"></i>
+															<span> Submenu 2.2</span></a>
+													<ul role="menu">
+															<li role="menuitem" id="menuform:rm_221"><a
+																class="menulink" href="#"><i class="icon-folder2"></i>
+																	<span> Submenu 2.2.1</span></a>
+															<ul role="menu">
+																	<li role="menuitem" id="menuform:rm_lnk2211"><a
+																		href="#" class="menulink"><i
+																			class="icon-link-outline"></i><span>Link 1</span></a></li>
+																	<li role="menuitem" id="menuform:rm_lnk2212"><a
+																		href="#" class="menulink"><i
+																			class="icon-link-outline"></i><span>Link 2</span></a></li>
+																	<li role="menuitem" id="menuform:rm_lnk2213"><a
+																		href="#" class="menulink"><i
+																			class="icon-link-outline"></i><span>Link 3</span></a></li>
+																</ul></li>
+														</ul></li>
+												</ul></li>
+										</ul></li>
+									<li role="menuitem" id="menuform:rm_links">
+										<a class="menulink" href="#">
+											<i class="icon-atom"></i> 
+											<span> Links</span>
+										</a>
+									</li>
+								</ul>
+								<!-- <script type="text/javascript">Volt.restoreMenuState();</script> -->
+								<!-- <input type="hidden" autocomplete="off" value="2942217110514667860:-8398805372486492450" id="j_id1:javax.faces.ViewState:14" name="javax.faces.ViewState"/> -->
+							</form>
+						</div>
+					</div>
+					<div id="layout-portlets-tablecell-right">
+						<div id="content">
+							<ui:insert name="content">Default content</ui:insert>
+						</div>			
+					
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+
+</body>
+</html>

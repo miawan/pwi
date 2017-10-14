@@ -1,0 +1,26 @@
+<ui:composition
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	
+	
+</h:head>
+	<ui:include src="/common/templates/templatePanel/templateLayout/header.xhtml"/>
+	<div id="mainDiv" style="height:100%">
+		<table>
+			<tr>
+				<td width="25%">
+					<ui:include src="/common/templates/templatePanel/templateLayout/panelMenu.xhtml" />
+				</td>
+				<td width="100%">
+					<div id="content">
+						<ui:insert name="content">Default content</ui:insert>
+					</div>					
+				</td>
+			</tr>
+		</table>
+	</div>
+	<div id="footer">Footer</div>
+</ui:composition>

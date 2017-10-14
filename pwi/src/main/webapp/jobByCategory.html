@@ -1,0 +1,19 @@
+<div ng-controller="jobByCatController">
+	<h2>
+		<span>Jobs</span>
+	</h2>
+	<div ng-repeat="job in jobsByCat">
+		<div class="fix single_latest_post">
+			<div class="fix latest_post_img floatleft">
+				<img ng-src="data:image/JPEG;base64,{{job.snapshot}}" alt="" />
+			</div>
+			<div class="fix latest_post_title floatright">
+				<h2>
+					<a href="">{{job.name}}</a>
+				</h2>
+				<span>{{job.creationDate}} <a href=""></a></span>
+				<p>{{job.description}}</p>
+			</div>
+		</div>
+	</div>
+</div>

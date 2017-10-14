@@ -1,0 +1,33 @@
+<ui:composition template="/common/templates/template.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+
+	<ui:define name="content">
+		<h:form>
+		<p:panelGrid columns="2">
+		<f:facet name="header">
+		<h:outputText value="this" />
+		</f:facet>
+			<h:outputText value="Name *"/>
+			<h:inputText value="#{textBean.labsDTO.labname}" required="true" />
+			<h:outputText value="Description"/>
+			<h:inputText value="#{textBean.labsDTO.descriptiontext}" required="true" />
+			<h:outputText value="Active "/>
+			<p:selectBooleanCheckbox value="#{textBean.labsDTO.activated}" />
+			<h:outputText value="test Image" />
+			<p:fileUpload fileUploadListener="#{textBean.upload}"
+				mode="advanced" sizeLimit="999999999" description="Select Images" />
+			<p:commandButton value="Save" action="#{textBean.saveLab}"/>
+		</p:panelGrid>
+		</h:form>
+
+
+
+
+
+	</ui:define>
+</ui:composition>

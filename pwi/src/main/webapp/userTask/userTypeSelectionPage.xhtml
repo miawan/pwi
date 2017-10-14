@@ -1,0 +1,71 @@
+<ui:composition template="/common/templates/template.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+    <title>Wizard Example</title>
+    <script type="text/javascript" >
+        function resetWizard() {
+            wiz.loadStep(wiz.cfg.steps[0], true);
+        }
+    </script>
+</h:head>
+	<ui:define name="content">
+		<h:form>
+			<p:growl id="growl" sticky="true" showDetail="true" />
+
+
+			<p:wizard widgetVar="wiz" flowListener="#{userBean.onFlowProcess}">
+				<p:tab id="personal" title="Personal">
+					<p:panel header="Personal Details">
+						<h:messages errorClass="error" />
+						<h:panelGrid columns="2" columnClasses="label, value"
+							styleClass="grid">
+							<h:outputText value="* First Name:" />
+							<h:inputText id="firstName" value="#{userBean.userDTO.firstname}"
+								label="* First Name" required="true" />
+
+							<h:outputText value="Middle Name:" />
+							<h:inputText id="middleName"
+								value="#{userBean.userDTO.middlename}" />
+
+							<h:outputText value="* Last Name:" />
+							<h:inputText id="lastname" value="#{userBean.userDTO.lastname}"
+								label="* Last Name" required="true" errorStyle="color:red" />
+						</h:panelGrid>
+					</p:panel>
+				</p:tab>
+				<p:tab id="addres" title="Address">
+					<p:panel header="Adress Details">
+						<h:messages errorClass="error" />
+						<h:panelGrid columns="2" columnClasses="label, value">
+							<h:outputText value="* City:" />
+							<h:inputText id="city" value="#{userBean.userDTO.city}"
+								label="* City " required="true" errorStyle="color:red" />
+							<h:outputText value="* Institution:" />
+							<h:selectOneMenu value="#{userBean.userDTO.selectedInstitution}">
+								<f:selectItems value="#{userBean.searchBy.listInstitution}" />
+							</h:selectOneMenu>
+							<h:outputText value="* Address:" />
+							<h:inputText id="address" value="#{userBean.userDTO.address}"
+								label="* User Type" required="true" errorStyle="color:red" />
+							<h:outputText value="* Country" />
+							<h:inputText id="Country" value="#{userBean.userDTO.country}" />
+							<h:outputText value="* Contact Number:" />
+							<h:inputText id="contactnumber"
+								value="#{userBean.userDTO.contactnumber}"
+								label="* Contect Number" required="true" errorStyle="color:red" />
+						</h:panelGrid>
+					</p:panel>
+					<p:commandButton value="Weiter" onclick="wiz.next()" update="@this"/>
+				</p:tab>
+				
+				</p:wizard>
+		</h:form>
+
+
+
+	</ui:define>
+</ui:composition>

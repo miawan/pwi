@@ -1,0 +1,86 @@
+<ui:composition template="../common/templates/volttemplate.xhtml" 
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<script type="text/css">
+	.centered  {
+ margin: 0px auto;
+text-align: center;
+ }
+
+
+.left {
+float: left;   
+}
+</script>
+<ui:define name="content">
+
+<h:form>
+	
+	  <div class="Card OrangeBack White TexAlCenter Fs20 FontVoltBold">Log In | Sign Up Panel</div>
+	  <br/><br/>
+	 
+		  <p:panel style=" margin-left: 20%; margin-right:20%"  >
+		<h2>Name</h2>
+		 <div class="ui-fluid" >
+			<p:panelGrid columns="4" columnClasses="ui-grid-col-10,ui-grid-col-10" layout="grid" styleClass="ui-panelgrid-blank">
+			
+				<p:column>
+					<p:inputText id="fname" />
+					<p:watermark for="fname" value="First" />
+				</p:column>
+				<p:column>
+					<p:inputText id="lname" />
+					<p:watermark for="lname" value="Last"/>
+				</p:column>
+			</p:panelGrid>
+		
+			<h2>Institution</h2>
+		  	<p:selectOneMenu id="console" value="#{test.console}" >
+	            <f:selectItem itemLabel="Select Institution" itemValue="null" />
+	            <f:selectItem itemLabel="Xbox One" itemValue="Xbox One" />
+	            <f:selectItem itemLabel="PS4" itemValue="PS4" />
+	            <f:selectItem itemLabel="Wii U" itemValue="Wii U" />
+	        </p:selectOneMenu>
+	        <br/><br/>
+	        	<p:inputText id="uname"/>
+				<p:watermark for="uname" value="Username" />
+			<br/><br/>
+	        	<p:password id="pw1" feedback="true" inline="true" match="pw2" required="true"/>
+	        	<p:watermark value="Password" for="pw1"/>
+	        	<br/><br/>
+	        	<p:password id="pw2" label="Password 2" required="true" />
+	        	<p:watermark value="Password Again" for="pw2"/>
+	        	<br/><br/>
+			<div style="align:center" class="g-recaptcha" data-sitekey="6Le0CBcTAAAAAEUeqk5hbD3Q9j5oNjKS2GWxWkFM"></div>
+			
+			
+	                    
+	       	<!-- <h2>Birth</h2>
+	       	<p:panelGrid columns="3" columnClasses="ui-grid-col-5,ui-grid-col-2, ui-grid-col-5" layout="grid" styleClass="ui-panelgrid-blank">
+	       		<p:selectOneMenu id="birth" value="#{test.console}" >
+	            <f:selectItem itemLabel="Month" itemValue="null" />
+	            <f:selectItem itemLabel="JAN" itemValue="1" />
+	            <f:selectItem itemLabel="FEB" itemValue="2" />
+	            <f:selectItem itemLabel="MAR" itemValue="3" />
+	        </p:selectOneMenu>
+	        <p:column>
+		        <p:inputText id="day"/>
+		        <p:watermark value="Day" for="day"/>
+	        </p:column>
+	        <p:column>
+		        <p:inputText id="year"/>
+		        <p:watermark value="Year" for="year"/>
+	        </p:column>
+	       	</p:panelGrid> -->
+	       
+	  	</div>
+	  	
+	    
+	    </p:panel>
+	  </h:form>
+</ui:define>
+</ui:composition>

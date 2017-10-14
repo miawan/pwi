@@ -1,0 +1,75 @@
+<ui:composition template="/common/templates/template.xhtml" 
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<ui:define name="content">
+	<h:form id="form" ajaxSubmit="true">
+		<p:growl id="growl" showDetail="true" />
+		
+		
+		<p:panel id="usersPanel" header="Registerd Users" style="width:955px">
+		<p:dataTable id="usersRecord" var="u" value="#{userBean.genericDataModel}" editable="true" 
+			paginator="true" rows="10" selection="#{usreBean.selectedUser}" selectionMode="single" >  
+  
+        <p:ajax event="rowSelect" listener="#{userBean.onRowSelect}"   
+                    update=":form:display :form:growl" oncomplete="userDialog.show()" />  
+        <p:ajax event="rowUnselect" listener="#{userBean.onRowUnselect}" update=":form:growl"/>  
+  
+        <f:facet name="header">  
+            Select a row to display a message  
+        </f:facet>      
+        <p:column headerText="First Name">  
+			#{u.firstname}
+        </p:column>  
+  
+        <p:column headerText="Middle Name">  
+            #{u.middlename} 
+        </p:column>  
+  
+        <p:column headerText="Last Name" >  
+            #{u.lastname} 
+        </p:column>  
+  
+        <p:column headerText="City">  
+            #{u.city}
+        </p:column>  
+    <f:facet name="footer">  
+          
+        </f:facet>  
+    </p:dataTable>  
+  
+    <p:dialog id="dialog" header="User Detail" widgetVar="userDialog" resizable="false" modal="true" height="500"
+    			width="1000" showEffect="explode" hideEffect="explode">  
+  
+        <h:panelGrid id="display" columns="2" cellpadding="4">  
+  
+            <f:facet name="header">  
+               pic  
+            </f:facet>  
+  
+            <h:outputText value="first name:" />  
+            <h:outputText value="#{userBean.selectedUser.firstname}" />  
+  
+            <h:outputText value="middle name:" />  
+            <h:outputText value="#{userBean.selectedUser.middlename}" />  
+  
+            <h:outputText value="last name:" />  
+            <h:outputText value="#{userBean.selectedUser.lastname}" />  
+  
+            <h:outputText value="city:" />  
+            <h:outputText value="#{userBean.selectedUser.city}" />  
+        </h:panelGrid>  
+    </p:dialog>  
+</p:panel>
+		        
+		
+</h:form>
+	
+	
+	
+	
+</ui:define>
+</ui:composition>

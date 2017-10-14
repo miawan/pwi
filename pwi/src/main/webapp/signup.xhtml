@@ -1,0 +1,82 @@
+<ui:composition template="common/templates/logintemplate.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+	<script type="text/css">
+	.centered  {
+ margin: 0px auto;
+text-align: center;
+ }
+
+
+.left {
+float: left;   
+}
+
+#recaptcha_image img { width: 500px; height: 57px; border: solid 1px #a3a9ac; }
+#recaptcha_image { width: 500px; height: 57px; margin: 3px 0 5px 0;}
+</script>
+	<ui:define name="content">
+		<h:form>
+			<div class="Card OrangeBack White TexAlCenter Fs20 FontVoltBold">LogIn | Sign Up Panel</div>
+			<br />
+			<br />
+
+			<p:panel >
+				<h2>Name</h2>
+				<div class="ui-fluid">
+					<p:panelGrid columns="4" columnClasses="ui-grid-col-10,ui-grid-col-10" layout="grid" styleClass="ui-panelgrid-blank">
+
+						<p:column>
+							<p:inputText id="fname" />
+							<p:watermark for="fname" value="First" />
+						</p:column>
+						<p:column>
+							<p:inputText id="lname" />
+							<p:watermark for="lname" value="Last" />
+						</p:column>
+					</p:panelGrid>
+
+					<h2>Institution</h2>
+					<p:selectOneMenu id="institutionCombo" value="#{test.console}" editable="true" filter="true">
+			            <f:selectItems value="#{signupBean.listInstitution}" />
+			        </p:selectOneMenu>
+			        
+			        <p:selectOneMenu value="#{test.console}" effect="fade" editable="true" filter="true" filterMatchMode="startsWith">  
+					    <f:selectItem itemLabel="Select One" itemValue="" />
+					    <f:selectItem itemLabel="One" itemValue="One" />
+					    <f:selectItem itemLabel="Two" itemValue="Two" />
+					    <f:selectItem itemLabel="Three" itemValue="Three" />  
+					</p:selectOneMenu>
+
+					<br />
+					<br />
+					<p:inputText id="uname" />
+					<p:watermark for="uname" value="Username" />
+					<br />
+					<br />
+					<p:password id="pw1" feedback="true" inline="true" match="pw2" required="true" />
+					<p:watermark value="Password" for="pw1" />
+					<br />
+					<br />
+					<p:password id="pw2" label="Password 2" required="true" />
+					<p:watermark value="Password Again" for="pw2" />
+					<br />
+					<br />
+					
+					<div class="Container100" style="margin-left:10%; margin-right:10% ">
+						<div style="align:center" class="g-recaptcha" data-sitekey="6Le0CBcTAAAAAEUeqk5hbD3Q9j5oNjKS2GWxWkFM"/>
+					</div>
+					<br />
+					<p:commandButton value="Submit" update="@form"/>
+
+
+				</div>
+			</p:panel>
+		</h:form>
+		
+	</ui:define>
+</ui:composition>

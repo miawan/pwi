@@ -1,0 +1,152 @@
+<ui:composition template="/common/templates/template.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+	<ui:define name="content">
+		<h:form id="registerUser" ajaxSubmit="true">
+			<p:growl id="growl" showDetail="true" />
+
+			<p:wizard id="panel" widgetVar="wiz" flowListener="#{userBean.onFlowProcess}">
+
+
+				<p:tab id="package" title="Package Plan">
+					<p:panel header="Package Plan">
+					<h:panelGrid columns="2" columnClasses="label, value"
+							styleClass="grid">
+							
+						<h:messages errorClass="error" />
+						
+						<p:tabView id="tabView" dynamic="true"> 
+							<p:tab title="Teachers">
+							<h:outputText value="Please Choose your package accourding to your requirements" />
+    						
+    							    							
+    							<p:selectOneRadio value="#{userBean.userDTO.selectedUserType}" rendered="true" >
+									
+									<f:selectItem itemLabel="Only 300 Students can b registerd" itemValue="2"/>
+									<f:selectItem itemLabel="Only 400 Students can b registerd" itemValue="3" />
+									<f:selectItem itemLabel="Only 500 Students can b registerd" itemValue="4" />
+								</p:selectOneRadio>
+								
+								</p:tab>
+							<p:tab title="Student">
+							<p:selectOneRadio value="#{userBean.userDTO.selectedUserType}" rendered="true" >
+									
+									<f:selectItem itemLabel="select if you are a student" itemValue="5"/>
+									
+								</p:selectOneRadio>
+							
+							</p:tab>
+							
+								</p:tabView>
+								</h:panelGrid>  
+					</p:panel>
+					<p:commandLink update="panel" process="@this" ction="#{userBean.clear}" value="reset"/>
+				</p:tab>
+
+
+
+
+
+				<p:tab id="personal" title="Personal">
+					<p:panel header="Personal Information">
+						<h:messages errorClass="error" />
+						<h:panelGrid columns="2" columnClasses="label, value"
+							styleClass="grid">
+
+							<h:outputText value="* First Name:" />
+							<h:inputText id="firstName" value="#{userBean.userDTO.firstname}"
+								label="* First Name" required="true" />
+
+							<h:outputText value="Middle Name:" />
+							<h:inputText id="middleName"
+								value="#{userBean.userDTO.middlename}" />
+
+							<h:outputText value="* Last Name:" />
+							<h:inputText id="lastname" value="#{userBean.userDTO.lastname}"
+								label="* Last Name" required="true" errorStyle="color:red" />
+						</h:panelGrid>
+					</p:panel>
+					<p:commandLink update="panel" process="@this" ction="#{userBean.clear}" value="reset"/>
+				</p:tab>
+				<p:tab id="addres" title="Personal">
+					<p:panel header="Address Detail">
+						<h:messages errorClass="error" />
+						<h:panelGrid columns="2" columnClasses="label, value"
+							styleClass="grid">
+							<h:outputText value="* City:" />
+							<h:inputText id="city" value="#{userBean.userDTO.city}"
+								label="* City " required="true" errorStyle="color:red" />
+							<h:outputText value="* Institution:" />
+							<h:selectOneMenu value="#{userBean.userDTO.selectedInstitution}">
+								<f:selectItems value="#{userBean.searchBy.listInstitution}" />
+							</h:selectOneMenu>
+							<h:outputText value="* Address:" />
+							<h:inputText id="address" value="#{userBean.userDTO.address}"
+								label="* User Type" required="true" errorStyle="color:red" />
+							<h:outputText value="* Country" />
+							<h:inputText id="Country" value="#{userBean.userDTO.country}" />
+							<h:outputText value="* Contact Number:" />
+							<h:inputText id="contactnumber"
+								value="#{userBean.userDTO.contactnumber}"
+								label="* Contect Number" required="true" errorStyle="color:red" />
+						</h:panelGrid>
+					</p:panel>
+					<p:commandLink update="panel" process="@this" ction="#{userBean.clear}" value="reset"/>
+				</p:tab>
+				<p:tab id="confermation" title="Confermation">
+					<p:panel header="Confermation">
+						<h:messages errorClass="error" />
+						<h:panelGrid columns="2" columnClasses="label, value" styleClass="grid">
+							
+							<h:outputText value="User Type:" />
+							<h:outputText value="#{userBean.userDTO.selectedUserType}"/>
+							
+							<h:outputText value="* First Name:" />
+							<h:outputText value="#{userBean.userDTO.firstname}" />
+
+							<h:outputText value="Middle Name:" />
+							<h:outputText value="#{userBean.userDTO.middlename}" />
+
+							<h:outputText value="* Last Name:" />
+							<h:outputText value="#{userBean.userDTO.lastname}" />
+							
+							<h:outputText value="* City:" />
+							<h:outputText value="#{userBean.userDTO.city}"/>
+							<h:outputText value="* Institution:" />
+							<h:outputText  value="#{userBean.userDTO.selectedInstitution}" />
+								
+								
+							<h:outputText value="* Address:" />
+							<h:outputText value="#{userBean.userDTO.address}" />
+							<h:outputText value="* Country" />
+							<h:outputText value="#{userBean.userDTO.country}" />
+							<h:outputText value="* Contact Number:" />
+							<h:outputText value="#{userBean.userDTO.contactnumber}" />
+							
+							
+							</h:panelGrid>
+							</p:panel>
+							<p:commandButton action="#{userBean.saveUser}" value="Submit" />
+							</p:tab>
+				
+			</p:wizard>
+			<p:commandButton action="#{userBean.clear}" value="check" />
+		</h:form>
+	</ui:define>
+</ui:composition>
+
+
+<!-- 
+
+<p:panel id="mainPanel" header="Register User" toggleable="true"
+				closable="true" toggleSpeed="500" closeSpeed="500" widgetVar="panel">
+				<p:ajax event="close" listener="#{growlBean.handleClose}"
+					update="growl" />
+				<p:ajax event="toggle" listener="#{growlBean.handleToggle}"
+					update="growl" />
+				<h:panelGrid columns="2">
+ -->

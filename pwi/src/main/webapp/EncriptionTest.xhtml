@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+<h:head profile="http://gmpg.org/xfn/11">
+</h:head>
+
+<p:messages id="messages" showDetail="true" autoUpdate="true" />
+<ui:insert>
+	<ui:include
+		src="common/templates/templatePanel/templateLayout/header.xhtml"></ui:include>
+</ui:insert>
+
+<h:form>
+
+	<p:messages id="messages" showDetail="true" autoUpdate="true" />
+
+	<h:panelGrid columns="2" id="matchGrid">
+		<h:outputText value="User Name" />
+		<h:inputText value="#{UtilityProvider.loginDTO.username}" />
+		<h:outputLabel for="feedback" value="Password: *" />
+		<p:password id="feedback" value="#{UtilityProvider.loginDTO.password}"
+			label="Password" required="true" feedback="true" />
+	</h:panelGrid>
+
+
+	<p:commandButton id="saveButton" value="SignUp"
+		action="#{UtilityProvider.signup}" />
+
+	<h:panelGrid columns="2">
+		<h:outputText value="User Name" />
+		<h:inputText value="#{UtilityProvider.loginDTO.search}" />
+	</h:panelGrid>
+	<p:commandButton id="searchButton" value="Search"
+		action="#{UtilityProvider.search}" />
+
+
+</h:form>
+</html>

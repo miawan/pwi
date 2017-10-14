@@ -1,0 +1,53 @@
+<ui:composition template="/common/templates/template.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+	<ui:define name="content">
+	<h:form>
+	
+		<p:panel id="inactiveLabsPanel" header="retesting list" style="width:955px">
+				<p:dataTable var="lab" value="#{textController.inactiveLabs}" editable="true" paginator="true" rows="5">
+				<p:ajax event="rowEdit" update="@this" listener="#{textController.rowEditListener}" />
+					
+					<p:column headerText="description" style="width:125px">
+						<p:cellEditor>
+							<f:facet name="output">		
+								<h:outputText value="#{lab.labname}" />
+							</f:facet>
+							<f:facet name="input">
+								<h:inputText value="#{lab.labname}" />
+							</f:facet>
+						</p:cellEditor>
+					</p:column>
+					<p:column headerText="description" style="width:125px">
+						<p:cellEditor>
+							<f:facet name="output">		
+								<h:outputText value="#{lab.descriptiontext}" />
+							</f:facet>
+							<f:facet name="input">
+								<h:inputText value="#{lab.descriptiontext}" />
+							</f:facet>
+						</p:cellEditor>
+					</p:column>
+					<p:column headerText="image" style="width:125px">
+					<p:media  value="#{textController.inActiveImage}" player="flash" height="150" width="120">
+						<f:param name="id" value="#{lab.id}"/>
+					</p:media>
+					</p:column>
+					
+					<p:column headerText="Options" style="width:50px">
+					<p:spacer width="10px" ></p:spacer>
+					<p:rowEditor />					
+					<p:commandLink title="#{lab.id}" action="#{textController.inactiveLab}">
+						<p:graphicImage value="/images/DeleteRed.png"></p:graphicImage>
+						<f:param name="key" value="#{lab.id}"></f:param>
+					</p:commandLink>  
+					</p:column>	
+					
+				</p:dataTable>
+			</p:panel> 
+</h:form>
+	</ui:define>
+</ui:composition>

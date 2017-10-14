@@ -1,0 +1,111 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+	
+	<h:body>
+		<h:form>
+		
+			<p:megaMenu>
+				<p:submenu label="TV" icon="ui-icon-check">
+					<p:column>
+						<p:submenu label="TV.1">
+							<p:menuitem value="TV.1.1" url="#" />
+							<p:menuitem value="TV.1.2" url="#" />
+						</p:submenu>
+						<p:submenu label="TV.2">
+							<p:menuitem value="TV.2.1" url="#" />
+							<p:menuitem value="TV.2.2" url="#" />
+							<p:menuitem value="TV.2.3" url="#" />
+						</p:submenu>
+						<p:submenu label="TV.3">
+							<p:menuitem value="TV.3.1" url="#" />
+							<p:menuitem value="TV.3.2" url="#" />
+						</p:submenu>
+					</p:column>
+
+					<p:column>
+						<p:submenu label="TV.4">
+							<p:menuitem value="TV.4.1" url="#" />
+							<p:menuitem value="TV.4.2" url="#" />
+						</p:submenu>
+						<p:submenu label="TV.5">
+							<p:menuitem value="TV.5.1" url="#" />
+							<p:menuitem value="TV.5.2" url="#" />
+							<p:menuitem value="TV.5.3" url="#" />
+						</p:submenu>
+					</p:column>
+
+					<p:column>
+						<strong>Sopranos</strong>
+						<p:graphicImage value="x-images/pic2.png" width="200" />
+					</p:column>
+				</p:submenu>
+
+				<p:submenu label="About VSL" icon="ui-icon-document">
+
+					<p:column>
+						<p:submenu label="History and Mission">
+							<p:menuitem value="Introduction" />
+						</p:submenu>
+						<p:submenu label="Administration">
+							<p:menuitem value="Architechturar" url="#" />
+							<p:menuitem value="Requirement Enylist" url="#" />
+							<p:menuitem value="Animation Designer" url="#" />
+						</p:submenu>
+						<p:submenu label="VSL Social Media">
+							<p:menuitem value="Face Book" url="#" />
+							<p:menuitem value="YouTube" url="#" />
+						</p:submenu>
+					</p:column>
+
+					<p:column>
+						<p:submenu label="Offices">
+							<p:menuitem value="Head Office" url="#" />
+							<p:menuitem value="Lahore" url="#" />
+						</p:submenu>
+						<p:submenu label="Community">
+							<p:menuitem value="VSL Community" url="#" />
+						</p:submenu>
+					</p:column>
+				</p:submenu>
+
+				<p:submenu label="Members Cattegary" icon="ui-icon-pencil">
+					<p:column>
+						<p:submenu label="Supper User">
+							<p:menuitem value="more..." url="#" />
+						</p:submenu>
+						<p:submenu label="Senior User">
+							<p:menuitem value="more..." url="#" />
+						</p:submenu>
+						<p:submenu label="Junior User">
+							<p:menuitem value="more..." url="#" />
+						</p:submenu>
+					</p:column>
+				</p:submenu>
+
+
+				<p:submenu label="Learn" icon="ui-icon-contact">
+					<p:column>
+						<p:submenu label="Feature">
+							<p:menuitem value="Lab Simulations" url="learnPanel.jsf" />
+							<p:menuitem value="Course Meterials" url="#" />
+							<p:menuitem value="Support" url="#" />
+						</p:submenu>
+						<p:submenu label="Uses">
+							<p:menuitem value="Online Labs" url="#" />
+							<p:menuitem value="Make-up Labs" url="#" />
+							<p:menuitem value="Pre-Labs" url="#" />
+							<p:menuitem value="Post-Labs" url="#" />
+						</p:submenu>						
+					</p:column>					
+				</p:submenu>
+
+				<p:menuitem value="HOME" url="index.jsf"
+					icon="ui-icon-close" />
+			</p:megaMenu>
+		</h:form>
+	</h:body>
+</ui:composition>

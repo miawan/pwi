@@ -1,0 +1,160 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+	<head>
+		<title>Welcome to SeeDailyJobs</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!-- Font Awesome -->
+		<link rel="stylesheet" href="resources/css/font-awesome.min.css">
+		<link rel="stylesheet" href="resources/fonts/HelveticaNeue/font.css">
+		<link href="resources/css/style.css" rel="stylesheet" media="screen">	
+		<link href="resources/css/responsive.css" rel="stylesheet" media="screen">		
+	</head>
+
+	<body id="scroll_top">
+		<!-- Logo section Start -->
+		<section id="header_area">
+				
+				<div class="fix header_bottom_area">
+					<div class="header_bottom center">
+						<div class="fix logo floatleft">
+							<h1>SeeDailyJobs</h1>
+						<!-- Tag line	<p>Latest Trends are here.</p> -->
+						</div>
+						<!--advertisement area
+						<div class="fix header_add floatright">
+							  <img src=""/> 
+						</div>
+						-->
+					</div>
+				</div>
+				
+		</section>
+			<!-- Logo section End -->
+		<section id="header_bottom_area"></section>
+		<section id="content_area">
+			<div class="content center">
+				<!--
+				<div class="main_menu">
+					<nav>
+						<ul id="nav2">
+							<li><a href="">World News <span>From Around The Globe</span></a></li>
+							<li><a href="">Celebrity News <span>Juicy Hollywood Gossip</span></a>
+								<ul>
+									<li><a href="">Home Page</a></li>
+									<li><a href="">Blog Page</a></li>
+									<li><a href="">Full width Page</a></li>
+									<li><a href="">Archive Page</a></li>
+								</ul>
+							</li>
+							<li><a href="">Technology <span>Apps, Internet & Gadgets</span></a> </li>
+							<li><a href="">Lifestyle Tips <span>Your Health & Happiness</span></a> </li>
+							<li><a href="">Entertainment <span>Movies, Music & Reviews</span></a>
+								<ul>
+									<li><a href="">Home Page</a></li>
+									<li><a href="">Blog Page</a></li>
+									<li><a href="">Full width Page</a></li>
+									<li><a href="">Archive Page</a></li>
+								</ul>
+							</li>
+							<li><a href="">Travel News <span>Travel news guides & Tips</span></a></li>
+						</ul>
+					</nav>
+				</div>
+				
+				 Main Menu area is commented by arslan -->
+				
+				
+				<div class="fix main_content_area" ng-app="seeDailyJobs">
+					<div class="fix home_main_content">
+						<div class="main_content floatleft">
+						  
+							 <div class="fix main_content_container">							
+								<div class="fix single_content_latest_post floatleft">
+									<div ng-view></div>
+								</div>
+							</div> 
+						</div>
+						<div class="sidebar floatright">
+							<!-- 
+							<div class="fix single_sidebar">
+								<h2><span>Search</span></h2>
+								<input type="text" placeholder="to search, type and hit enter"/>
+							</div>
+							-->
+							<div class="fix single_sidebar">
+								<h2><span>Categories</span></h2>
+								<ul ng-controller="jobByCatController">
+									<li ng-repeat="c in categories"><a ng-click="jobsbyCat(c.id);">{{c.name}}</a></li>
+								</ul>
+							</div>
+							<div class="fix single_sidebar">
+								<h2><span>Advertisements</span></h2>
+								<img src="http://dummyimage.com/300x250/dddddd/787878" alt=""/>
+							</div>
+							<div class="fix single_sidebar">
+								<h2><span>Recent posts</span></h2>
+								<ul>
+									<li><a href="">Use Prose to Put the Focus on Your Words</a></li>
+									<li><a href="">Use Prose to Put the Focus on Your Words</a></li>
+									<li><a href="">Use Prose to Put the Focus on Your Words</a></li>
+									<li><a href="">Use Prose to Put the Focus on Your Words</a></li>
+									<li><a href="">Use Prose to Put the Focus on Your Words</a></li>
+								</ul>
+							</div>
+							
+							
+							<div class="fix single_sidebar tags">
+								<h2><span>Tags</span></h2>
+									<a href="">tags</a>
+									<a href="">tags cloud</a>
+									<a href="">fashion</a>
+									<a href="">Design</a>
+									<a href="">IOS</a>
+									<a href="">Android</a>
+									<a href="">tags</a>
+									<a href="">tags cloud</a>
+									<a href="">fashion</a>
+									<a href="">Design</a>
+									<a href="">IOS</a>
+									<a href="">Android</a>
+									<a href="">tags</a>
+									<a href="">tags cloud</a>
+									<a href="">fashion</a>
+									<a href="">Design</a>
+									<a href="">IOS</a>
+									<a href="">Android</a>
+							</div>
+						</div>
+					</div>
+					<div class="fix scroll_to_top">
+						<a href="#scroll_top" class="floatright">Back to Top </a>
+					</div>
+				</div>
+				
+			</div>
+		</section>
+		<section id="footer_top_area">
+			<div class="fix footer_top center">
+				<div class="fix footer_bottom ">
+					<div class="fix copyright floatleft">
+						<p>SeeDailyJobs All Rights Reserved</p>
+					</div>
+					<div class="fix footer_bottom_text floatright">
+						<p>SeeDailyJobs by  <a href="#">CitiTecnologies.com</a></p>
+					</div>
+				</div>
+			</div>
+		</section>
+		<script src="http://code.jquery.com/jquery.js"></script>
+		<!-- Jessor slider Start-->
+    <script type="text/javascript" src="resources/js/jssor.core.js"></script>
+    <script type="text/javascript" src="resources/js/jssor.utils.js"></script>
+    <script type="text/javascript" src="resources/js/angular.js"></script>
+    <script type="text/javascript" src="resources/js/angular-resource.js"></script>
+    <script type="text/javascript" src="resources/js/angular-route.js"></script>
+	<script type="text/javascript" src="resources/js/app.js"></script>
+	<script type="text/javascript" src="resources/js/controllers.js"></script>
+	<script type="text/javascript" src="resources/js/services.js"></script>
+	</body>
+</html>
