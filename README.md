@@ -38,6 +38,9 @@ After importing done! update maven and that will solve build paths by importing 
 * [products](https://github.com/miawan/pwi/blob/master/Products.md)
 * [warehouse](https://github.com/miawan/pwi/blob/master/warehouse.md)
 
+
+### You can find documentation here
+* [Project Documentation](http://35.182.60.96:8080/doc/index.html) -Live Documentation
 ## NOTE: 
 * Please feel free to query if you face any problem to setup the dev enviroment.
 
