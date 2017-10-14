@@ -22,15 +22,15 @@ A step by step series of examples that tell you have to get a development env ru
 
 ```
 Run eclipse -> Go to import... -> maven -> Existing Maven Project -> select all the project including
-1 - pwi
-2 - manager
-3 - utils
-4 - dao
-5 - dto
-6 - domain
+pwi
+manager
+utils
+dao
+dto
+domain
 After importing done! update maven and that will solve build paths by importing maven dependencies.
 ```
-## Built With
+### Built With
 * [Maven](https://maven.apache.org/) - Dependency Management
 
 
@@ -41,8 +41,9 @@ After importing done! update maven and that will solve build paths by importing 
 
 ### You can find documentation here
 * [Project Documentation](http://35.182.60.96:8080/doc/index.html) -Live Documentation
-## NOTE: 
+### NOTE: 
 * Please feel free to query if you face any problem to setup the dev enviroment.
 
 ### Author
-* **MI Awan** 
+* **MI Awan**
+* miamdk@gmail.com
