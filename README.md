@@ -35,5 +35,5 @@ After importing done! update maven and that will solve build paths by importing 
 
 
 ### For Sample Requeat and response please view files
-* [products]()
-* [warehouse]()
+* [products](https://github.com/miawan/pwi/blob/master/Products.md)
+* [warehouse](https://github.com/miawan/pwi/blob/master/warehouse.md)
