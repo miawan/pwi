@@ -21,7 +21,7 @@ A step by step series of examples that tell you have to get a development env ru
 
 
 ```
-Run eclipse > Go to import... > maven > Existing Maven Project > select all the project including
+Run eclipse -> Go to import... -> maven -> Existing Maven Project -> select all the project including
 1 - pwi
 2 - manager
 3 - utils
@@ -37,3 +37,9 @@ After importing done! update maven and that will solve build paths by importing 
 ### For Sample Requeat and response please view files
 * [products](https://github.com/miawan/pwi/blob/master/Products.md)
 * [warehouse](https://github.com/miawan/pwi/blob/master/warehouse.md)
+
+## NOTE: 
+* Please feel free to query if you face any problem to setup the dev enviroment.
+
+### Author
+* **MI Awan** 
